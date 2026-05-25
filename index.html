@@ -125,6 +125,35 @@ footer a{color:var(--accent);text-decoration:none;}
 .sub-title{font-family:'Orbitron',sans-serif;font-size:.82rem;margin-bottom:1rem;max-width:1100px;margin-left:auto;margin-right:auto;padding-left:1.5rem;}
 @keyframes fadeDown{from{opacity:0;transform:translateY(-18px)}to{opacity:1;transform:translateY(0)}}
 @keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+/* FORMULES & TABS */
+.tab-bar{display:flex;flex-wrap:wrap;gap:.7rem;justify-content:center;max-width:1100px;margin:0 auto 2rem;}
+.tab-btn{font-family:'Orbitron',sans-serif;font-size:.78rem;letter-spacing:1px;padding:.75rem 1.5rem;border-radius:10px;border:1px solid var(--border);background:rgba(0,212,255,.05);color:var(--muted);cursor:pointer;transition:.3s;font-weight:600;}
+.tab-btn:hover{color:var(--accent);border-color:var(--accent);background:rgba(0,212,255,.1);}
+.tab-btn.active{background:linear-gradient(135deg,var(--accent),var(--accent3));color:white;border-color:transparent;box-shadow:0 6px 24px rgba(0,212,255,.25);}
+.tab-btn.gold.active{background:linear-gradient(135deg,var(--gold),var(--accent2));}
+.tab-btn.purple.active{background:linear-gradient(135deg,var(--accent3),var(--accent2));}
+.formula-panel{max-width:900px;margin:0 auto;display:none;animation:fadeUp .5s ease;}
+.formula-panel.active{display:block;}
+.formula-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:2rem;position:relative;overflow:hidden;}
+.formula-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--accent),var(--accent3));}
+.formula-card.gold::before{background:linear-gradient(90deg,var(--gold),var(--accent2));}
+.formula-head{display:flex;align-items:center;gap:1rem;margin-bottom:1rem;flex-wrap:wrap;}
+.formula-icon{font-size:2.5rem;}
+.formula-title{font-family:'Orbitron',sans-serif;font-size:1.1rem;color:var(--text);}
+.formula-tagline{color:var(--muted);font-size:.82rem;margin-top:.2rem;}
+.formula-price-box{display:flex;gap:1.2rem;align-items:baseline;flex-wrap:wrap;margin:1.2rem 0;padding:1rem 1.4rem;background:rgba(0,0,0,.3);border-radius:10px;}
+.formula-price{font-family:'Orbitron',sans-serif;font-size:2rem;font-weight:900;color:var(--gold);}
+.formula-hours{font-family:'Space Mono',monospace;font-size:.85rem;color:var(--accent);letter-spacing:1px;}
+.formula-pay{font-size:.78rem;color:var(--muted);font-family:'Space Mono',monospace;}
+.formula-features{list-style:none;margin-top:1rem;}
+.formula-features li{font-size:.85rem;color:var(--text);padding:.5rem 0;border-bottom:1px solid rgba(255,255,255,.05);display:flex;gap:.7rem;align-items:flex-start;}
+.formula-features li::before{content:'✓';color:var(--green);font-weight:bold;font-size:1rem;flex-shrink:0;}
+.formula-note{max-width:900px;margin:1.5rem auto 0;background:linear-gradient(135deg,rgba(255,107,53,.08),rgba(255,215,0,.04));border:1px solid rgba(255,107,53,.25);border-radius:12px;padding:1.1rem 1.4rem;color:var(--muted);font-size:.82rem;line-height:1.6;display:flex;gap:.8rem;align-items:flex-start;}
+.formula-note strong{color:var(--accent2);}
+.vente-panel{display:none;animation:fadeUp .5s ease;}
+.vente-panel.active{display:block;}
+.vente-intro{max-width:900px;margin:0 auto 1.5rem;text-align:center;color:var(--muted);font-size:.88rem;line-height:1.6;}
+.vente-intro strong{color:var(--accent);}
 </style>
 </head>
 <body>
@@ -336,19 +365,18 @@ AffYaACNBtDgwKMBNBpAowE0FAMIAP6tsxwJ0zDPAAAAAElFTkSuQmCC"/>
   <p class="hero-tagline">Là où les enfants deviennent des créateurs de technologie — <em>Where Kids Become Technology Creators</em></p>
   <div class="hero-tags">
     <span class="tag">🤖 Robotique</span><span class="tag">💻 Coding</span><span class="tag">🧠 IA / AI</span>
-    <span class="tag">⚡ IoT · ESP32 · Arduino</span><span class="tag">🏆 Compétitions Intl.</span><span class="tag">🎓 3→18 ans</span>
+    <span class="tag">⚡ IoT · ESP32 · Arduino</span><span class="tag">🏆 Compétitions Intl.</span><span class="tag">🎓 6→18 ans</span>
   </div>
   <div class="hero-locs">
-    <span class="loc">🇫🇷 <span>Metz, France</span></span>
     <span class="loc">🇱🇺 <span>Luxembourg</span></span>
-    <span class="loc">🇹🇳 <span>Tunisie</span></span>
   </div>
 </header>
 
 <nav>
   <div class="nav-inner">
-    <a href="#programmes">📚 Programmes</a><a href="#age3">🌱 3–6 ans</a><a href="#age6">🚀 6–10 ans</a>
-    <a href="#age10">⚡ 10–15 ans</a><a href="#age15">🧠 15+ ans</a><a href="#vente">🛒 Vente</a>
+    <a href="#programmes">📚 Programmes</a><a href="#age6">🚀 6–10 ans</a>
+    <a href="#age10">⚡ 10–15 ans</a><a href="#age15">🧠 15+ ans</a>
+    <a href="#formules">🎯 Formules</a><a href="#vente">🛒 Vente</a>
     <a href="#competitions">🏆 Compétitions</a><a href="#equipe">👩‍🏫 Équipe</a>
   </div>
 </nav>
@@ -357,36 +385,18 @@ AffYaACNBtDgwKMBNBpAowE0FAMIAP6tsxwJ0zDPAAAAAElFTkSuQmCC"/>
 <section id="programmes">
   <div class="section-header">
     <span class="section-label">NOS PROGRAMMES</span>
-    <h2 class="section-title">📚 Formations Structurées 3–18 ans</h2>
+    <h2 class="section-title">📚 Formations Structurées 6–18 ans</h2>
     <p class="section-sub">Parcours progressifs — du premier robot à l'intelligence artificielle embarquée</p>
   </div>
   <div class="cards">
-    <div class="card green" style="text-align:center"><span class="card-icon">🌱</span><div class="card-title">3–6 ans</div><div class="card-sub">ÉVEIL</div><div style="color:var(--muted);font-size:.82rem">WiseBot · Blocs créatifs · Découverte</div></div>
     <div class="card" style="text-align:center"><span class="card-icon">🚀</span><div class="card-title">6–10 ans</div><div class="card-sub">INITIATION</div><div style="color:var(--muted);font-size:.82rem">Alpha X · Beta Set · mBot · micro:bit · Ardublock</div></div>
     <div class="card orange" style="text-align:center"><span class="card-icon">⚡</span><div class="card-title">10–15 ans</div><div class="card-sub">INTERMÉDIAIRE</div><div style="color:var(--muted);font-size:.82rem">Intelligence Storm · RoboRun · C++ · MicroPython ESP32</div></div>
     <div class="card gold" style="text-align:center"><span class="card-icon">🧠</span><div class="card-title">15–18 ans</div><div class="card-sub">EXPERT</div><div style="color:var(--muted);font-size:.82rem">Robot Maker · ESP32 IoT · TinyML · IA embarquée</div></div>
   </div>
 </section>
 
-<!-- 3–6 ANS -->
-<div class="age-block alt" id="age3">
-  <div class="age-banner green"><span class="age-icon">🌱</span><div class="age-info"><h2>3 – 6 ans — Éveil à la Robotique</h2><p>Discovery of Robotics — First steps in technology</p></div></div>
-  <div class="cards">
-    <div class="card green"><span class="card-badge green">Éveil</span><span class="card-icon">🐞</span>
-      <div class="card-title">WiseBot</div><div class="card-sub">Programmation sans écran · cartes de tâches</div>
-      <ul class="card-features"><li>Robot programmable par cartes de tâches</li><li>Maps interactives + app mobile</li><li>Développement logique et créativité</li><li>Compatible préscolaire / maternelle</li></ul>
-      <div class="card-sessions"><span class="sess">⏱ 10 séances</span><span class="lvl">Éveil</span></div>
-    </div>
-    <div class="card green"><span class="card-badge green">Éveil</span><span class="card-icon">🧸</span>
-      <div class="card-title">WiseChild2 Elementary</div><div class="card-sub">Blocs · Formes · Couleurs · Coopération</div>
-      <ul class="card-features"><li>1 smart pen + 1 smart motor</li><li>137 blocs géants — 32 modèles robots</li><li>Pensée algorithmique et créativité</li><li>Activités coopératives et storytelling</li></ul>
-      <div class="card-sessions"><span class="sess">⏱ 8 séances</span><span class="lvl">Éveil</span></div>
-    </div>
-  </div>
-</div>
-
 <!-- 6–10 ANS -->
-<div class="age-block" id="age6">
+<div class="age-block alt" id="age6">
   <div class="age-banner"><span class="age-icon">🚀</span><div class="age-info"><h2>6 – 10 ans — Initiation & Programmation par Blocs</h2><p>Beginner — Block-based programming & first robots</p></div></div>
   <div class="cards">
     <div class="card"><span class="card-badge">Débutant</span><span class="card-icon">🚗</span>
@@ -472,14 +482,93 @@ AffYaACNBtDgwKMBNBpAowE0FAMIAP6tsxwJ0zDPAAAAAElFTkSuQmCC"/>
   </div>
 </div>
 
+<!-- FORMULES & TARIFS -->
+<section id="formules">
+  <div class="section-header">
+    <span class="section-label">FORMULES & TARIFS</span>
+    <h2 class="section-title">🎯 Choisissez Votre Formule</h2>
+    <p class="section-sub">Deux parcours adaptés à vos objectifs — formation académique ou parcours compétiteur international</p>
+  </div>
+
+  <div class="tab-bar">
+    <button class="tab-btn active" data-formula="simple" onclick="showFormula('simple', this)">📘 Formation Simple</button>
+    <button class="tab-btn gold" data-formula="compet" onclick="showFormula('compet', this)">🏆 Formation + Compétiteur</button>
+  </div>
+
+  <div id="formula-simple" class="formula-panel active">
+    <div class="formula-card">
+      <div class="formula-head">
+        <span class="formula-icon">📘</span>
+        <div>
+          <div class="formula-title">Formation Simple</div>
+          <div class="formula-tagline">Parcours académique structuré — robotique, coding & IA</div>
+        </div>
+      </div>
+      <div class="formula-price-box">
+        <span class="formula-price">690€</span>
+        <span class="formula-hours">⏱ 22 heures</span>
+        <span class="formula-pay">Paiement annuel ou trimestriel</span>
+      </div>
+      <ul class="formula-features">
+        <li>Programme complet adapté à la tranche d'âge (6–10, 10–15 ou 15–18 ans)</li>
+        <li>Robotique, programmation par blocs, C++, Python, ESP32, IoT</li>
+        <li>Suivi pédagogique personnalisé par notre équipe</li>
+        <li>Attestation de fin de formation Les Petits Génies</li>
+        <li>Accès aux ateliers et événements de l'académie</li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="formula-compet" class="formula-panel">
+    <div class="formula-card gold">
+      <div class="formula-head">
+        <span class="formula-icon">🏆</span>
+        <div>
+          <div class="formula-title">Formation + Compétiteur</div>
+          <div class="formula-tagline">Parcours intensif — préparation aux compétitions nationales & internationales</div>
+        </div>
+      </div>
+      <div class="formula-price-box">
+        <span class="formula-price">900€</span>
+        <span class="formula-hours">⏱ 33 heures</span>
+        <span class="formula-pay">Paiement annuel ou trimestriel</span>
+      </div>
+      <ul class="formula-features">
+        <li>Tout le contenu de la Formation Simple inclus</li>
+        <li>+11h de coaching technique compétition</li>
+        <li>Préparation aux épreuves MRC, Eurobot Junior, Coupe de France</li>
+        <li>Encadrement par coach officiel (Dr. Nassira BARHOUMI — Eurobot Coach)</li>
+        <li>Stratégie de match, design robot et débogage avancé</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="formula-note">
+    <span style="font-size:1.3rem;">⚠️</span>
+    <div>
+      <strong>Participation aux compétitions facturée sur devis</strong> — selon la nature de la compétition (nationale ou internationale).<br/>
+      Le devis inclut : frais d'inscription, déplacement, hébergement, matériel et logistique. Contactez-nous pour une estimation personnalisée.
+    </div>
+  </div>
+</section>
+
 <!-- VENTE -->
 <section id="vente">
   <div class="section-header">
     <span class="section-label">CATALOGUE ROBOTS</span>
-    <h2 class="section-title">🛒 Robots en Vente</h2>
-    <p class="section-sub">Robots pédagogiques ZMROBO disponibles à l'achat — académies, clubs, écoles, particuliers</p>
+    <h2 class="section-title">🛒 Robots & Kits en Vente</h2>
+    <p class="section-sub">Deux gammes selon vos besoins — équipement professionnel ou robots & kits maison conçus par notre académie</p>
   </div>
-  <div class="robot-grid">
+
+  <div class="tab-bar">
+    <button class="tab-btn active" data-vente="pro" onclick="showVente('pro', this)">🏫 Vente Professionnels (LEGO · ZMROBO)</button>
+    <button class="tab-btn purple" data-vente="kids" onclick="showVente('kids', this)">🛠️ Génies Kids (Arduino · ESP32 · Kits Maison)</button>
+  </div>
+
+  <!-- VENTE PRO -->
+  <div id="vente-pro" class="vente-panel active">
+    <p class="vente-intro"><strong>Pour écoles, centres de formation robotique et clubs professionnels</strong> — kits ZMROBO et LEGO complets, niveau institutionnel.</p>
+    <div class="robot-grid">
     <div class="robot-card new-bot"><span class="robot-icon-lg">🏎️</span>
       <span class="robot-price-tag new-p">Sur devis</span>
       <h4>RoboRun</h4>
@@ -528,28 +617,82 @@ AffYaACNBtDgwKMBNBpAowE0FAMIAP6tsxwJ0zDPAAAAAElFTkSuQmCC"/>
       <div class="robot-ref">Réf. JMC-NY-2325E · ZMROBO</div>
       <span class="robot-tag">📦 Formation 6–10 ans</span>
     </div>
-    <div class="robot-card"><span class="robot-icon-lg">🐞</span>
-      <span class="robot-price-tag">Sur devis</span>
-      <h4>WiseBot</h4>
-      <p>Robot éducatif préscolaire — cartes de tâches, maps interactives, app mobile.</p>
-      <ul><li>Activity books, maps, task cards, app</li><li>Programmation sans écran</li><li>Âge 3+ ans</li></ul>
-      <div class="robot-ref">Réf. JMC-NY-2495E · ZMROBO</div>
-      <span class="robot-tag">📦 Formation 3–6 ans</span>
     </div>
-    <div class="robot-card"><span class="robot-icon-lg">🧸</span>
-      <span class="robot-price-tag">Sur devis</span>
-      <h4>WiseChild2 Elementary</h4>
-      <p>Kit préscolaire complet — smart pen, smart motor, 137 blocs géants, 32 modèles.</p>
-      <ul><li>1 smart pen + 1 smart motor</li><li>137 blocs géants</li><li>Âge 3–6 ans</li></ul>
-      <div class="robot-ref">Réf. JMC-NY-2101AE · ZMROBO</div>
-      <span class="robot-tag">📦 Formation 3–6 ans</span>
+    <div class="pack-banner" style="margin-top:2rem;">
+      <div class="pack-icon">📦</div>
+      <div><h3>Packs Académie & École</h3>
+        <p>Tarifs préférentiels pour écoles, académies et clubs. Prix distributeur disponibles sur devis.</p>
+        <a href="mailto:robotics.academy.contact@gmail.com">📧 Demander un devis</a>
+      </div>
     </div>
   </div>
-  <div class="pack-banner" style="margin-top:2rem;">
-    <div class="pack-icon">📦</div>
-    <div><h3>Packs Académie & École</h3>
-      <p>Tarifs préférentiels pour écoles, académies et clubs. Prix distributeur disponibles sur devis.</p>
-      <a href="mailto:robotics.academy.contact@gmail.com">📧 Demander un devis</a>
+
+  <!-- VENTE GÉNIES KIDS -->
+  <div id="vente-kids" class="vente-panel">
+    <p class="vente-intro"><strong>Robots & Kits maison — créés par notre Académie</strong> 🛠️<br/>Robots Arduino & ESP32 conçus en projets pédagogiques par nos formateurs, et kits de formation basique & avancée pour les enfants et adolescents.</p>
+    <div class="robot-grid">
+
+      <div class="robot-card new-bot"><span class="robot-icon-lg">📦</span>
+        <span class="robot-price-tag new-p">Sur devis</span>
+        <h4>Kit Formation Basique</h4>
+        <p>Kit débutant Arduino — tout le matériel pour suivre la formation 6–10 ans à la maison.</p>
+        <ul><li>1 carte Arduino Uno + câbles</li><li>LEDs, buzzer, capteurs simples</li><li>Compatible Ardublock (blocs)</li><li>Livret pédagogique Petits Génies</li><li>Âge 6–10 ans</li></ul>
+        <div class="robot-ref">Maison · Conçu par l'Académie</div>
+        <span class="robot-tag new">🆕 Kit Basique</span>
+      </div>
+
+      <div class="robot-card new-bot"><span class="robot-icon-lg">📚</span>
+        <span class="robot-price-tag new-p">Sur devis</span>
+        <h4>Kit Formation Avancée</h4>
+        <p>Kit intermédiaire/avancé — Arduino + ESP32 pour la formation 10–18 ans avec C++ et MicroPython.</p>
+        <ul><li>Arduino Uno + ESP32 DevKit</li><li>Capteurs avancés (ultrason, DHT, IR)</li><li>Servomoteurs, écran OLED, modules Wi-Fi</li><li>Livret projets IoT & robotique</li><li>Âge 10–18 ans</li></ul>
+        <div class="robot-ref">Maison · Conçu par l'Académie</div>
+        <span class="robot-tag new">🆕 Kit Avancé</span>
+      </div>
+
+      <div class="robot-card new-bot"><span class="robot-icon-lg">🤖</span>
+        <span class="robot-price-tag new-p">Sur devis</span>
+        <h4>Mini-Robot Arduino — Suiveur de Ligne</h4>
+        <p>Robot maison conçu par nos formateurs — projet pédagogique Arduino pour les enfants.</p>
+        <ul><li>Châssis 2 moteurs + Arduino Nano</li><li>Capteurs IR suivi de ligne</li><li>Programmable Ardublock & C++</li><li>Livré assemblé + code source</li><li>Âge 8–12 ans</li></ul>
+        <div class="robot-ref">Made by Petits Génies Academy</div>
+        <span class="robot-tag new">🛠️ Robot Maison</span>
+      </div>
+
+      <div class="robot-card new-bot"><span class="robot-icon-lg">🚗</span>
+        <span class="robot-price-tag new-p">Sur devis</span>
+        <h4>Robot ESP32 — Voiture Connectée</h4>
+        <p>Robot maison ESP32 — projet Wi-Fi/Bluetooth pour adolescents, contrôle smartphone.</p>
+        <ul><li>ESP32 DevKit + 4 moteurs + driver L298N</li><li>Contrôle smartphone (Wi-Fi + BLE)</li><li>Caméra ESP32-CAM optionnelle</li><li>Code MicroPython fourni</li><li>Âge 12–18 ans</li></ul>
+        <div class="robot-ref">Made by Petits Génies Academy</div>
+        <span class="robot-tag new">🛠️ Robot Maison</span>
+      </div>
+
+      <div class="robot-card new-bot"><span class="robot-icon-lg">🦾</span>
+        <span class="robot-price-tag new-p">Sur devis</span>
+        <h4>Bras Robotique 4-DOF Arduino</h4>
+        <p>Bras robotique maison — projet expert Arduino pour adolescents 15+.</p>
+        <ul><li>4 servomoteurs SG90 + base imprimée 3D</li><li>Carte Arduino Uno + shield contrôle</li><li>Programmation C++ avancée</li><li>Manette de contrôle incluse</li><li>Âge 15–18 ans</li></ul>
+        <div class="robot-ref">Made by Petits Génies Academy</div>
+        <span class="robot-tag new">🛠️ Robot Maison</span>
+      </div>
+
+      <div class="robot-card new-bot"><span class="robot-icon-lg">📡</span>
+        <span class="robot-price-tag new-p">Sur devis</span>
+        <h4>Kit ESP32 IoT — Maison Connectée</h4>
+        <p>Kit projet IoT — projet expert pour adolescents passionnés de domotique & objets connectés.</p>
+        <ul><li>ESP32 + capteurs DHT22, PIR, gaz</li><li>Relais + LEDs RGB connectées</li><li>Cloud Blynk / ThingSpeak prêt à l'emploi</li><li>Livret projets domotique</li><li>Âge 14–18 ans</li></ul>
+        <div class="robot-ref">Made by Petits Génies Academy</div>
+        <span class="robot-tag new">🛠️ Kit Expert</span>
+      </div>
+
+    </div>
+    <div class="pack-banner" style="margin-top:2rem;">
+      <div class="pack-icon">🛠️</div>
+      <div><h3>Robots & Kits Maison — Génies Kids</h3>
+        <p>Tous nos robots et kits sont conçus, assemblés et testés par notre équipe pédagogique. Documentation et code source inclus.</p>
+        <a href="mailto:robotics.academy.contact@gmail.com">📧 Demander un devis Génies Kids</a>
+      </div>
     </div>
   </div>
 </section>
@@ -722,7 +865,7 @@ AffYaACNBtDgwKMBNBpAowE0FAMIAP6tsxwJ0zDPAAAAAElFTkSuQmCC"/>
       <div class="team-avatar">🎓</div>
       <div class="team-name">Dr. Nassira BARHOUMI</div>
       <div class="team-role">Co-fondatrice · Directrice Pédagogique</div>
-      <div style="font-size:.72rem;color:var(--muted);margin-bottom:.5rem;">🇫🇷 Metz, France · 🇹🇳 Tunis</div>
+      <div style="font-size:.72rem;color:var(--muted);margin-bottom:.5rem;">🇱🇺 Luxembourg</div>
       <div class="divider"></div>
       <ul class="team-facts">
         <li>🎓 Docteure IAEM &amp; Génie Électrique</li>
@@ -744,7 +887,7 @@ AffYaACNBtDgwKMBNBpAowE0FAMIAP6tsxwJ0zDPAAAAAElFTkSuQmCC"/>
       <div class="team-avatar">💼</div>
       <div class="team-name">Joumana KHOURI</div>
       <div class="team-role">Co-fondatrice · Directrice Administrative &amp; Partenariats</div>
-      <div style="font-size:.72rem;color:var(--muted);margin-bottom:.5rem;">🇱🇺 Luxembourg · 🇫🇷 France</div>
+      <div style="font-size:.72rem;color:var(--muted);margin-bottom:.5rem;">🇱🇺 Luxembourg</div>
       <div class="divider"></div>
       <ul class="team-facts">
         <li>⚖️ Master en Droit (LLM)</li>
@@ -759,7 +902,7 @@ AffYaACNBtDgwKMBNBpAowE0FAMIAP6tsxwJ0zDPAAAAAElFTkSuQmCC"/>
       <div class="team-avatar">📈</div>
       <div class="team-name">Marwen BARI</div>
       <div class="team-role">Co-fondateur · Directeur Commercial &amp; Développement</div>
-      <div style="font-size:.72rem;color:var(--muted);margin-bottom:.5rem;">🇫🇷 Metz, France · 🇹🇳 Tunis</div>
+      <div style="font-size:.72rem;color:var(--muted);margin-bottom:.5rem;">🇱🇺 Luxembourg</div>
       <div class="divider"></div>
       <ul class="team-facts">
         <li>🎓 Maîtrise Sciences de Gestion</li>
@@ -796,9 +939,9 @@ AffYaACNBtDgwKMBNBpAowE0FAMIAP6tsxwJ0zDPAAAAAElFTkSuQmCC"/>
         <div class="card-title" style="font-size:.82rem;">Négociation &amp; Partenariats</div>
         <div class="card-desc">Expert en négociation commerciale, gestion des fournisseurs et mise en place de partenariats stratégiques.</div>
       </div>
-      <div class="card gold"><span class="card-icon" style="font-size:1.4rem;">🇫🇷</span>
-        <div class="card-title" style="font-size:.82rem;">Basé à Metz</div>
-        <div class="card-desc">Résident à Metz (57) — ancrage local idéal pour le développement commercial de l'académie en Lorraine.</div>
+      <div class="card gold"><span class="card-icon" style="font-size:1.4rem;">🇱🇺</span>
+        <div class="card-title" style="font-size:.82rem;">Basé au Luxembourg</div>
+        <div class="card-desc">Résident au Luxembourg — ancrage local idéal pour le développement commercial de l'académie au Grand-Duché.</div>
       </div>
       <div class="card gold"><span class="card-icon" style="font-size:1.4rem;">📋</span>
         <div class="card-title" style="font-size:.82rem;">Gestion de la Qualité</div>
@@ -818,7 +961,7 @@ AffYaACNBtDgwKMBNBpAowE0FAMIAP6tsxwJ0zDPAAAAAElFTkSuQmCC"/>
     <div class="cards">
       <div class="card purple"><span class="card-icon" style="font-size:1.4rem;">🌐</span>
         <div class="card-title" style="font-size:.82rem;">5 langues maîtrisées</div>
-        <div class="card-desc">Français, Anglais, Allemand (C1) · Arabe (C2) · Luxembourgeois (B1) — idéale pour accueillir les familles de Metz &amp; Luxembourg.</div>
+        <div class="card-desc">Français, Anglais, Allemand (C1) · Arabe (C2) · Luxembourgeois (B1) — idéale pour accueillir les familles internationales du Luxembourg.</div>
       </div>
       <div class="card purple"><span class="card-icon" style="font-size:1.4rem;">⚖️</span>
         <div class="card-title" style="font-size:.82rem;">Expertise juridique</div>
@@ -873,7 +1016,7 @@ AffYaACNBtDgwKMBNBpAowE0FAMIAP6tsxwJ0zDPAAAAAElFTkSuQmCC"/>
       </div>
       <div class="card"><span class="card-icon" style="font-size:1.4rem;">🏢</span>
         <div class="card-title" style="font-size:.82rem;">Fondatrice &amp; Co-fondatrice</div>
-        <div class="card-desc">Les Petits Génies de la Robotique · Metz &amp; Luxembourg · Réseau académique international</div>
+        <div class="card-desc">Les Petits Génies de la Robotique · Luxembourg · Réseau académique international</div>
       </div>
     </div>
     <div class="skills-strip" style="margin-top:1.5rem;">
@@ -888,7 +1031,7 @@ AffYaACNBtDgwKMBNBpAowE0FAMIAP6tsxwJ0zDPAAAAAElFTkSuQmCC"/>
 
 <footer>
   <div class="footer-brand">Les Petits Génies de la Robotique</div>
-  <p>🇫🇷 Metz, France · 🇱🇺 Luxembourg · 🇹🇳 Tunisie</p>
+  <p>🇱🇺 Luxembourg</p>
   <div class="footer-links">
     <a href="mailto:robotics.academy.contact@gmail.com">📧 robotics.academy.contact@gmail.com</a>
     
@@ -898,8 +1041,20 @@ AffYaACNBtDgwKMBNBpAowE0FAMIAP6tsxwJ0zDPAAAAAElFTkSuQmCC"/>
 
 <script>
 function setLang(btn){document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');}
+function showFormula(id, btn){
+  document.querySelectorAll('.formula-panel').forEach(p=>p.classList.remove('active'));
+  document.getElementById('formula-'+id).classList.add('active');
+  document.querySelectorAll('[data-formula]').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+}
+function showVente(id, btn){
+  document.querySelectorAll('.vente-panel').forEach(p=>p.classList.remove('active'));
+  document.getElementById('vente-'+id).classList.add('active');
+  document.querySelectorAll('[data-vente]').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+}
 const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)';}});},{threshold:.07});
-document.querySelectorAll('.card,.robot-card,.comp-item,.team-card').forEach(el=>{el.style.opacity='0';el.style.transform='translateY(20px)';el.style.transition='opacity .5s ease,transform .5s ease';obs.observe(el);});
+document.querySelectorAll('.card,.robot-card,.comp-item,.team-card,.formula-card').forEach(el=>{el.style.opacity='0';el.style.transform='translateY(20px)';el.style.transition='opacity .5s ease,transform .5s ease';obs.observe(el);});
 </script>
 </body>
 </html>
