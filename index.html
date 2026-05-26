@@ -186,9 +186,11 @@ footer a{color:var(--accent);text-decoration:none;}
 
 <nav>
   <div class="nav-inner">
-    <a href="#programmes">📚 Programmes</a><a href="#age6">🚀 6–10 ans</a>
-    <a href="#age10">⚡ 10–15 ans</a><a href="#age15">🧠 15+ ans</a>
-    <a href="#formules">🎯 Formules</a><a href="#vente">🛒 Vente</a>
+    <a href="#programmes">📚 Programmes</a>
+    <a href="#formules">⭐ Formules Phares</a>
+    <a href="#personnalisees">🎓 À la Carte</a>
+    <a href="#age6">🚀 6–10</a><a href="#age10">⚡ 10–15</a><a href="#age15">🧠 15+</a>
+    <a href="#vente">🛒 Vente</a>
     <a href="#competitions">🏆 Compétitions</a><a href="#equipe">👩‍🏫 Équipe</a>
   </div>
 </nav>
@@ -204,6 +206,88 @@ footer a{color:var(--accent);text-decoration:none;}
     <div class="card" style="text-align:center"><span class="card-icon">🚀</span><div class="card-title">6–10 ans</div><div class="card-sub">INITIATION</div><div style="color:var(--muted);font-size:.82rem">Alpha X · Beta Set · mBot · micro:bit · Ardublock</div></div>
     <div class="card orange" style="text-align:center"><span class="card-icon">⚡</span><div class="card-title">10–15 ans</div><div class="card-sub">INTERMÉDIAIRE</div><div style="color:var(--muted);font-size:.82rem">Intelligence Storm · RoboRun · C++ · MicroPython ESP32</div></div>
     <div class="card gold" style="text-align:center"><span class="card-icon">🧠</span><div class="card-title">15–18 ans</div><div class="card-sub">EXPERT</div><div style="color:var(--muted);font-size:.82rem">Robot Maker · ESP32 IoT · TinyML · IA embarquée · STM32</div></div>
+  </div>
+</section>
+
+<!-- FORMATIONS HEBDOMADAIRES — PAIEMENT TRIMESTRIEL -->
+<section id="formules">
+  <div class="section-header">
+    <span class="section-label">⭐ FORMATIONS HEBDOMADAIRES · PAIEMENT TRIMESTRIEL</span>
+    <h2 class="section-title">🎯 Nos Formules Phares</h2>
+    <p class="section-sub">Formation hebdomadaire à l'année avec paiement trimestriel — deux parcours adaptés à vos objectifs : formation académique ou parcours compétiteur international</p>
+  </div>
+
+  <div class="tab-bar">
+    <button class="tab-btn active" data-formula="simple" onclick="showFormula('simple', this)">📘 Formation Simple</button>
+    <button class="tab-btn gold" data-formula="compet" onclick="showFormula('compet', this)">🏆 Formation + Compétiteur</button>
+  </div>
+
+  <div id="formula-simple" class="formula-panel active">
+    <div class="formula-card">
+      <div class="formula-head">
+        <span class="formula-icon">📘</span>
+        <div>
+          <div class="formula-title">Formation Simple</div>
+          <div class="formula-tagline">Parcours académique structuré — robotique, coding & IA</div>
+        </div>
+      </div>
+      <div class="formula-price-box">
+        <span class="formula-price">690€</span>
+        <span class="formula-hours">⏱ 22 heures</span>
+        <span class="formula-pay">📅 Hebdomadaire · Paiement trimestriel</span>
+      </div>
+      <ul class="formula-features">
+        <li>Programme complet adapté à la tranche d'âge (6–10, 10–15 ou 15–18 ans)</li>
+        <li>Robotique, programmation par blocs, C++, Python, ESP32, IoT</li>
+        <li>Suivi pédagogique personnalisé par notre équipe</li>
+        <li>Attestation de fin de formation Les Petits Génies</li>
+        <li>Accès aux ateliers et événements de l'académie</li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="formula-compet" class="formula-panel">
+    <div class="formula-card gold">
+      <div class="formula-head">
+        <span class="formula-icon">🏆</span>
+        <div>
+          <div class="formula-title">Formation + Compétiteur</div>
+          <div class="formula-tagline">Parcours intensif — préparation aux compétitions nationales & internationales</div>
+        </div>
+      </div>
+      <div class="formula-price-box">
+        <span class="formula-price">1290€</span>
+        <span class="formula-hours">⏱ 44 heures</span>
+        <span class="formula-pay" style="text-decoration:line-through;opacity:.5;">1380€</span>
+        <span class="formula-pay" style="color:var(--green);">💰 -90€ remise</span>
+        <span class="formula-pay">📅 Hebdomadaire · Paiement trimestriel</span>
+      </div>
+      <ul class="formula-features">
+        <li>Tout le contenu de la Formation Simple inclus (22h)</li>
+        <li>+22h de coaching technique compétition (volume horaire doublé)</li>
+        <li>Préparation aux épreuves MRC, Eurobot Junior, Coupe de France</li>
+        <li>Encadrement par coach officiel (Dr. Nassira BARHOUMI — Eurobot Coach)</li>
+        <li>Stratégie de match, design robot et débogage avancé</li>
+        <li>Tarif préférentiel : 90€ de remise sur le double horaire</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="formula-note">
+    <span style="font-size:1.3rem;">⚠️</span>
+    <div>
+      <strong>Participation aux compétitions facturée sur devis</strong> — selon la nature de la compétition (nationale ou internationale).<br/>
+      Le devis inclut : frais d'inscription, déplacement, hébergement, matériel et logistique. Contactez-nous pour une estimation personnalisée.
+    </div>
+  </div>
+</section>
+
+<!-- FORMATIONS PERSONNALISÉES — À LA CARTE -->
+<section id="personnalisees">
+  <div class="section-header">
+    <span class="section-label">🎓 FORMATIONS PERSONNALISÉES · SUR DEMANDE</span>
+    <h2 class="section-title">📚 Modules à la Carte — Par Tranche d'Âge</h2>
+    <p class="section-sub">Modules thématiques tarifés à la séance (35€/séance) — choisissez la combinaison qui vous convient selon l'âge et les objectifs. Idéal pour un parcours sur mesure.</p>
   </div>
 </section>
 
@@ -298,79 +382,6 @@ footer a{color:var(--accent);text-decoration:none;}
     </div>
   </div>
 </div>
-
-<!-- FORMULES & TARIFS -->
-<section id="formules">
-  <div class="section-header">
-    <span class="section-label">FORMULES & TARIFS</span>
-    <h2 class="section-title">🎯 Choisissez Votre Formule</h2>
-    <p class="section-sub">Deux parcours adaptés à vos objectifs — formation académique ou parcours compétiteur international</p>
-  </div>
-
-  <div class="tab-bar">
-    <button class="tab-btn active" data-formula="simple" onclick="showFormula('simple', this)">📘 Formation Simple</button>
-    <button class="tab-btn gold" data-formula="compet" onclick="showFormula('compet', this)">🏆 Formation + Compétiteur</button>
-  </div>
-
-  <div id="formula-simple" class="formula-panel active">
-    <div class="formula-card">
-      <div class="formula-head">
-        <span class="formula-icon">📘</span>
-        <div>
-          <div class="formula-title">Formation Simple</div>
-          <div class="formula-tagline">Parcours académique structuré — robotique, coding & IA</div>
-        </div>
-      </div>
-      <div class="formula-price-box">
-        <span class="formula-price">690€</span>
-        <span class="formula-hours">⏱ 22 heures</span>
-        <span class="formula-pay">Paiement annuel ou trimestriel</span>
-      </div>
-      <ul class="formula-features">
-        <li>Programme complet adapté à la tranche d'âge (6–10, 10–15 ou 15–18 ans)</li>
-        <li>Robotique, programmation par blocs, C++, Python, ESP32, IoT</li>
-        <li>Suivi pédagogique personnalisé par notre équipe</li>
-        <li>Attestation de fin de formation Les Petits Génies</li>
-        <li>Accès aux ateliers et événements de l'académie</li>
-      </ul>
-    </div>
-  </div>
-
-  <div id="formula-compet" class="formula-panel">
-    <div class="formula-card gold">
-      <div class="formula-head">
-        <span class="formula-icon">🏆</span>
-        <div>
-          <div class="formula-title">Formation + Compétiteur</div>
-          <div class="formula-tagline">Parcours intensif — préparation aux compétitions nationales & internationales</div>
-        </div>
-      </div>
-      <div class="formula-price-box">
-        <span class="formula-price">1290€</span>
-        <span class="formula-hours">⏱ 44 heures</span>
-        <span class="formula-pay" style="text-decoration:line-through;opacity:.5;">1380€</span>
-        <span class="formula-pay" style="color:var(--green);">💰 -90€ remise</span>
-        <span class="formula-pay">Paiement annuel ou trimestriel</span>
-      </div>
-      <ul class="formula-features">
-        <li>Tout le contenu de la Formation Simple inclus (22h)</li>
-        <li>+22h de coaching technique compétition (volume horaire doublé)</li>
-        <li>Préparation aux épreuves MRC, Eurobot Junior, Coupe de France</li>
-        <li>Encadrement par coach officiel (Dr. Nassira BARHOUMI — Eurobot Coach)</li>
-        <li>Stratégie de match, design robot et débogage avancé</li>
-        <li>Tarif préférentiel : 90€ de remise sur le double horaire</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="formula-note">
-    <span style="font-size:1.3rem;">⚠️</span>
-    <div>
-      <strong>Participation aux compétitions facturée sur devis</strong> — selon la nature de la compétition (nationale ou internationale).<br/>
-      Le devis inclut : frais d'inscription, déplacement, hébergement, matériel et logistique. Contactez-nous pour une estimation personnalisée.
-    </div>
-  </div>
-</section>
 
 <!-- VENTE -->
 <section id="vente">
