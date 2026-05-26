@@ -391,7 +391,7 @@ AffYaACNBtDgwKMBNBpAowE0FAMIAP6tsxwJ0zDPAAAAAElFTkSuQmCC"/>
   <div class="cards">
     <div class="card" style="text-align:center"><span class="card-icon">🚀</span><div class="card-title">6–10 ans</div><div class="card-sub">INITIATION</div><div style="color:var(--muted);font-size:.82rem">Alpha X · Beta Set · mBot · micro:bit · Ardublock</div></div>
     <div class="card orange" style="text-align:center"><span class="card-icon">⚡</span><div class="card-title">10–15 ans</div><div class="card-sub">INTERMÉDIAIRE</div><div style="color:var(--muted);font-size:.82rem">Intelligence Storm · RoboRun · C++ · MicroPython ESP32</div></div>
-    <div class="card gold" style="text-align:center"><span class="card-icon">🧠</span><div class="card-title">15–18 ans</div><div class="card-sub">EXPERT</div><div style="color:var(--muted);font-size:.82rem">Robot Maker · ESP32 IoT · TinyML · IA embarquée</div></div>
+    <div class="card gold" style="text-align:center"><span class="card-icon">🧠</span><div class="card-title">15–18 ans</div><div class="card-sub">EXPERT</div><div style="color:var(--muted);font-size:.82rem">Robot Maker · ESP32 IoT · TinyML · IA embarquée · STM32</div></div>
   </div>
 </section>
 
@@ -457,7 +457,7 @@ AffYaACNBtDgwKMBNBpAowE0FAMIAP6tsxwJ0zDPAAAAAElFTkSuQmCC"/>
 
 <!-- 15+ ANS -->
 <div class="age-block" id="age15">
-  <div class="age-banner gold"><span class="age-icon">🧠</span><div class="age-info"><h2>15 – 18 ans — Expert & Projets Professionnels</h2><p>Expert — Professional projects & industry-level skills</p></div></div>
+  <div class="age-banner gold"><span class="age-icon">🧠</span><div class="age-info"><h2>15 – 18 ans — Expert & Projets Professionnels (STM32, IA, IoT)</h2><p>Expert — Professional projects & industry-level skills (STM32, AI, IoT)</p></div></div>
   <div class="cards">
     <div class="card gold"><span class="card-badge gold">Expert</span><span class="card-icon">🔧</span>
       <div class="card-title">Robot Maker (RoboMaker)</div><div class="card-sub">10 servomoteurs · Chorégraphie · Créativité</div>
@@ -478,6 +478,11 @@ AffYaACNBtDgwKMBNBpAowE0FAMIAP6tsxwJ0zDPAAAAAElFTkSuQmCC"/>
       <div class="card-title">IA Embarquée — TinyML</div><div class="card-sub">Vision · Machine Learning · ESP32-CAM</div>
       <ul class="card-features"><li>MicroPython avancé : async, décorateurs</li><li>ESP32-CAM : traitement d'images</li><li>TensorFlow Lite — tinyML</li><li>Projet : robot autonome vision IA</li></ul>
       <div class="card-sessions"><span class="sess">⏱ 18 séances</span><span class="lvl">Expert</span></div>
+    </div>
+    <div class="card gold"><span class="card-badge gold">Pro</span><span class="card-icon">🔷</span>
+      <div class="card-title">Développement STM32</div><div class="card-sub">Cartes Nucleo · Discovery · Niveau ingénieur</div>
+      <ul class="card-features"><li>Architecture ARM Cortex-M · STM32CubeIDE</li><li>HAL, CubeMX, génération de code</li><li>FreeRTOS, temps réel, multitâche</li><li>Communication CAN, SPI, I2C, UART</li><li>Projet final : système embarqué pro</li></ul>
+      <div class="card-sessions"><span class="sess">⏱ 20 séances</span><span class="lvl">Pro / Ingénieur</span></div>
     </div>
   </div>
 </div>
@@ -529,16 +534,19 @@ AffYaACNBtDgwKMBNBpAowE0FAMIAP6tsxwJ0zDPAAAAAElFTkSuQmCC"/>
         </div>
       </div>
       <div class="formula-price-box">
-        <span class="formula-price">900€</span>
-        <span class="formula-hours">⏱ 33 heures</span>
+        <span class="formula-price">1290€</span>
+        <span class="formula-hours">⏱ 44 heures</span>
+        <span class="formula-pay" style="text-decoration:line-through;opacity:.5;">1380€</span>
+        <span class="formula-pay" style="color:var(--green);">💰 -90€ remise</span>
         <span class="formula-pay">Paiement annuel ou trimestriel</span>
       </div>
       <ul class="formula-features">
-        <li>Tout le contenu de la Formation Simple inclus</li>
-        <li>+11h de coaching technique compétition</li>
+        <li>Tout le contenu de la Formation Simple inclus (22h)</li>
+        <li>+22h de coaching technique compétition (volume horaire doublé)</li>
         <li>Préparation aux épreuves MRC, Eurobot Junior, Coupe de France</li>
         <li>Encadrement par coach officiel (Dr. Nassira BARHOUMI — Eurobot Coach)</li>
         <li>Stratégie de match, design robot et débogage avancé</li>
+        <li>Tarif préférentiel : 90€ de remise sur le double horaire</li>
       </ul>
     </div>
   </div>
@@ -561,12 +569,12 @@ AffYaACNBtDgwKMBNBpAowE0FAMIAP6tsxwJ0zDPAAAAAElFTkSuQmCC"/>
   </div>
 
   <div class="tab-bar">
-    <button class="tab-btn active" data-vente="pro" onclick="showVente('pro', this)">🏫 Vente Professionnels (LEGO · ZMROBO)</button>
-    <button class="tab-btn purple" data-vente="kids" onclick="showVente('kids', this)">🛠️ Génies Kids (Arduino · ESP32 · Kits Maison)</button>
+    <button class="tab-btn purple active" data-vente="kids" onclick="showVente('kids', this)">🛠️ Génies Kids (Arduino · ESP32 · STM32 · Kits Maison) ⭐</button>
+    <button class="tab-btn" data-vente="pro" onclick="showVente('pro', this)">🏫 Vente Professionnels (LEGO · ZMROBO)</button>
   </div>
 
   <!-- VENTE PRO -->
-  <div id="vente-pro" class="vente-panel active">
+  <div id="vente-pro" class="vente-panel">
     <p class="vente-intro"><strong>Pour écoles, centres de formation robotique et clubs professionnels</strong> — kits ZMROBO et LEGO complets, niveau institutionnel.</p>
     <div class="robot-grid">
     <div class="robot-card new-bot"><span class="robot-icon-lg">🏎️</span>
@@ -628,8 +636,8 @@ AffYaACNBtDgwKMBNBpAowE0FAMIAP6tsxwJ0zDPAAAAAElFTkSuQmCC"/>
   </div>
 
   <!-- VENTE GÉNIES KIDS -->
-  <div id="vente-kids" class="vente-panel">
-    <p class="vente-intro"><strong>Robots & Kits maison — créés par notre Académie</strong> 🛠️<br/>Robots Arduino & ESP32 conçus en projets pédagogiques par nos formateurs, et kits de formation basique & avancée pour les enfants et adolescents.</p>
+  <div id="vente-kids" class="vente-panel active">
+    <p class="vente-intro"><strong>🌟 Notre offre phare — Robots & Kits maison conçus par notre Académie</strong> 🛠️<br/>Robots Arduino, ESP32 et STM32 conçus en projets pédagogiques par nos formateurs, kits de formation basique & avancée, projets IoT et électronique programmable pour enfants et adolescents.</p>
     <div class="robot-grid">
 
       <div class="robot-card new-bot"><span class="robot-icon-lg">📦</span>
@@ -652,10 +660,28 @@ AffYaACNBtDgwKMBNBpAowE0FAMIAP6tsxwJ0zDPAAAAAElFTkSuQmCC"/>
 
       <div class="robot-card new-bot"><span class="robot-icon-lg">🤖</span>
         <span class="robot-price-tag new-p">Sur devis</span>
-        <h4>Mini-Robot Arduino — Suiveur de Ligne</h4>
-        <p>Robot maison conçu par nos formateurs — projet pédagogique Arduino pour les enfants.</p>
-        <ul><li>Châssis 2 moteurs + Arduino Nano</li><li>Capteurs IR suivi de ligne</li><li>Programmable Ardublock & C++</li><li>Livré assemblé + code source</li><li>Âge 8–12 ans</li></ul>
-        <div class="robot-ref">Made by Petits Génies Academy</div>
+        <h4>Robot Suiveur de Ligne</h4>
+        <p>Robot maison — version Arduino (6–12 ans) ou ESP32 (12+ ans avec Wi-Fi) selon niveau.</p>
+        <ul><li>Châssis 2 moteurs + Arduino Nano ou ESP32</li><li>Capteurs IR suivi de ligne</li><li>Programmable Ardublock, C++ ou MicroPython</li><li>Livré assemblé + code source</li><li>Âge 8–18 ans · 2 niveaux</li></ul>
+        <div class="robot-ref">Made by Petits Génies Academy · Arduino / ESP32</div>
+        <span class="robot-tag new">🛠️ Robot Maison</span>
+      </div>
+
+      <div class="robot-card new-bot"><span class="robot-icon-lg">🚧</span>
+        <span class="robot-price-tag new-p">Sur devis</span>
+        <h4>Robot Éviteur d'Obstacles</h4>
+        <p>Robot autonome maison — détecte et contourne les obstacles. Arduino (initiation) ou ESP32 (avancé).</p>
+        <ul><li>Châssis 2/4 moteurs + Arduino Uno ou ESP32</li><li>Capteur ultrason HC-SR04 + servomoteur</li><li>Algorithmes d'évitement intelligents</li><li>Programmable C++ ou MicroPython</li><li>Âge 8–18 ans · 2 niveaux</li></ul>
+        <div class="robot-ref">Made by Petits Génies Academy · Arduino / ESP32</div>
+        <span class="robot-tag new">🛠️ Robot Maison</span>
+      </div>
+
+      <div class="robot-card new-bot"><span class="robot-icon-lg">🎮</span>
+        <span class="robot-price-tag new-p">Sur devis</span>
+        <h4>Robot Téléguidé</h4>
+        <p>Robot contrôlé à distance — version Arduino + télécommande IR/Bluetooth ou ESP32 + smartphone.</p>
+        <ul><li>Arduino + module Bluetooth HC-05/IR</li><li>OU ESP32 + Wi-Fi + appli smartphone</li><li>Contrôle joystick ou interface web</li><li>Code source & schémas fournis</li><li>Âge 8–18 ans · 2 niveaux</li></ul>
+        <div class="robot-ref">Made by Petits Génies Academy · Arduino / ESP32</div>
         <span class="robot-tag new">🛠️ Robot Maison</span>
       </div>
 
@@ -670,10 +696,10 @@ AffYaACNBtDgwKMBNBpAowE0FAMIAP6tsxwJ0zDPAAAAAElFTkSuQmCC"/>
 
       <div class="robot-card new-bot"><span class="robot-icon-lg">🦾</span>
         <span class="robot-price-tag new-p">Sur devis</span>
-        <h4>Bras Robotique 4-DOF Arduino</h4>
-        <p>Bras robotique maison — projet expert Arduino pour adolescents 15+.</p>
-        <ul><li>4 servomoteurs SG90 + base imprimée 3D</li><li>Carte Arduino Uno + shield contrôle</li><li>Programmation C++ avancée</li><li>Manette de contrôle incluse</li><li>Âge 15–18 ans</li></ul>
-        <div class="robot-ref">Made by Petits Génies Academy</div>
+        <h4>Bras Robotique 4-DOF</h4>
+        <p>Bras robotique maison — projet expert Arduino ou STM32 pour adolescents 15+.</p>
+        <ul><li>4 servomoteurs SG90 + base imprimée 3D</li><li>Carte Arduino Uno ou STM32 (niveau expert)</li><li>Programmation C++ avancée</li><li>Manette de contrôle incluse</li><li>Âge 15–18 ans</li></ul>
+        <div class="robot-ref">Made by Petits Génies Academy · Arduino / STM32</div>
         <span class="robot-tag new">🛠️ Robot Maison</span>
       </div>
 
@@ -684,6 +710,33 @@ AffYaACNBtDgwKMBNBpAowE0FAMIAP6tsxwJ0zDPAAAAAElFTkSuQmCC"/>
         <ul><li>ESP32 + capteurs DHT22, PIR, gaz</li><li>Relais + LEDs RGB connectées</li><li>Cloud Blynk / ThingSpeak prêt à l'emploi</li><li>Livret projets domotique</li><li>Âge 14–18 ans</li></ul>
         <div class="robot-ref">Made by Petits Génies Academy</div>
         <span class="robot-tag new">🛠️ Kit Expert</span>
+      </div>
+
+      <div class="robot-card new-bot"><span class="robot-icon-lg">🌐</span>
+        <span class="robot-price-tag new-p">Sur devis</span>
+        <h4>Projets IoT — Pack Découverte</h4>
+        <p>Plusieurs projets IoT clé en main — station météo, plante connectée, alarme intelligente.</p>
+        <ul><li>ESP32 + capteurs multiples (DHT, humidité sol, MQ)</li><li>Affichage OLED + dashboard mobile</li><li>Cloud MQTT, ThingSpeak, Blynk</li><li>3 projets guidés livrés</li><li>Âge 12–18 ans</li></ul>
+        <div class="robot-ref">Made by Petits Génies Academy</div>
+        <span class="robot-tag new">🌐 Projets IoT</span>
+      </div>
+
+      <div class="robot-card new-bot"><span class="robot-icon-lg">⚡</span>
+        <span class="robot-price-tag new-p">Sur devis</span>
+        <h4>Projets Électronique & Programmable</h4>
+        <p>Kit pour projets électroniques programmables — alarmes, jeux LED, automatisations, capteurs intelligents.</p>
+        <ul><li>Composants : LEDs, BP, capteurs, écrans LCD</li><li>Microcontrôleurs Arduino / ESP32</li><li>Schémas et code source des projets</li><li>5+ projets pédagogiques inclus</li><li>Âge 10–18 ans</li></ul>
+        <div class="robot-ref">Made by Petits Génies Academy</div>
+        <span class="robot-tag new">⚡ Électronique</span>
+      </div>
+
+      <div class="robot-card new-bot"><span class="robot-icon-lg">🔷</span>
+        <span class="robot-price-tag new-p">Sur devis</span>
+        <h4>Kit STM32 — Développement Pro</h4>
+        <p>Kit avancé STM32 — pour projets professionnels niveau ingénieur, formation 15+ ans.</p>
+        <ul><li>Carte STM32 Nucleo / Discovery</li><li>Programmation HAL, CubeMX, Keil/STM32CubeIDE</li><li>Capteurs industriels, communication CAN/SPI/I2C</li><li>Projets temps réel (FreeRTOS)</li><li>Âge 15–18 ans · Niveau pro</li></ul>
+        <div class="robot-ref">Made by Petits Génies Academy · STM32</div>
+        <span class="robot-tag new">🔷 STM32 Pro</span>
       </div>
 
     </div>
