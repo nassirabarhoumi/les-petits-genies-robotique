@@ -439,8 +439,7 @@ footer a{color:var(--accent);text-decoration:none;}
         <input type="hidden" name="access_key" value="757f4d04-ba11-477f-bfff-eecb6fc716bc">
         <input type="hidden" name="subject" value="🆕 Nouvelle inscription — Les Petits Génies de la Robotique">
         <input type="hidden" name="from_name" value="Site Les Petits Génies">
-        <input type="hidden" name="redirect" value="https://nassirabarhoumi.github.io/les-petits-genies-robotique/?inscription=ok#inscription">
-        <input type="checkbox" name="botcheck" style="display:none;">
+        <input type="checkbox" name="botcheck" style="display:none;tabindex:-1;" autocomplete="off">
 
         <h3>👨‍👩‍👦 INFORMATIONS PARENT</h3>
         <input type="text" name="Nom_Parent" placeholder="Nom & Prénom du parent *" required>
@@ -1084,20 +1083,65 @@ function showVente(id, btn){
 const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)';}});},{threshold:.07});
 document.querySelectorAll('.card,.robot-card,.comp-item,.team-card,.formula-card,.inscription-form,.qr-box,.contact-box').forEach(el=>{el.style.opacity='0';el.style.transform='translateY(20px)';el.style.transition='opacity .5s ease,transform .5s ease';obs.observe(el);});
 
-// INSCRIPTION FORM — auto-fill replyto with parent email + display success banner
+// INSCRIPTION FORM — double envoi : Web3Forms (email) + Vercel (SMS Twilio)
+// SMS_BACKEND_URL : remplacer par l'URL de votre fonction Vercel après déploiement
+const SMS_BACKEND_URL = 'https://lpg-sms-backend.vercel.app/api/sms';
+
 const form=document.getElementById('inscription-form');
 if(form){
+  // Auto-fill replyto avec email parent
   const emailInput=form.querySelector('input[name="email"]');
   const replyto=form.querySelector('input[name="replyto"]');
-  if(emailInput&&replyto)emailInput.addEventListener('blur',()=>{replyto.value=emailInput.value;});
+  if(emailInput&&replyto)emailInput.addEventListener('input',()=>{replyto.value=emailInput.value;});
+
+  form.addEventListener('submit',async(e)=>{
+    e.preventDefault();
+    const btn=form.querySelector('button[type="submit"]');
+    const original=btn.textContent;
+    btn.disabled=true;btn.textContent='⏳ ENVOI EN COURS...';
+    if(emailInput&&replyto)replyto.value=emailInput.value;
+
+    // Collecte des données (gère les checkboxes multiples Creneaux)
+    const fd=new FormData(form);
+    const data={};
+    fd.forEach((v,k)=>{if(k in data){data[k]=[].concat(data[k],v).join(', ');}else{data[k]=v;}});
+
+    // 1. POST vers Web3Forms (email)
+    const emailPromise=fetch('https://api.web3forms.com/submit',{method:'POST',body:fd})
+      .then(r=>r.json()).catch(err=>({success:false,err:err.message}));
+
+    // 2. POST vers backend Vercel (SMS Twilio) — non bloquant si échec
+    const smsPromise=fetch(SMS_BACKEND_URL,{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify(data)
+    }).then(r=>r.json()).catch(err=>({ok:false,err:err.message}));
+
+    const [emailRes,smsRes]=await Promise.all([emailPromise,smsPromise]);
+    console.log('Email result:',emailRes,'SMS result:',smsRes);
+
+    if(emailRes.success){
+      // Redirection avec marqueur de succès
+      window.location.href='?inscription=ok&sms='+(smsRes.ok?'ok':'no')+'#inscription';
+    }else{
+      btn.disabled=false;btn.textContent=original;
+      alert('⚠️ Erreur lors de l\'envoi de l\'email. Merci de réessayer ou de nous contacter directement à robotics.academy.contact@gmail.com');
+    }
+  });
 }
-// Success message after redirect
+
+// Bannière de succès après redirection
 if(window.location.search.includes('inscription=ok')){
   const section=document.getElementById('inscription');
   if(section){
+    const smsOk=window.location.search.includes('sms=ok');
     const banner=document.createElement('div');
-    banner.style.cssText='max-width:1100px;margin:0 auto 2rem;padding:1.2rem 1.5rem;background:linear-gradient(135deg,rgba(0,255,136,.12),rgba(0,212,255,.06));border:1px solid rgba(0,255,136,.4);border-radius:12px;color:var(--green);font-family:"Orbitron",sans-serif;font-size:.9rem;text-align:center;';
-    banner.innerHTML='✅ <strong>Inscription envoyée avec succès !</strong> Vous recevrez un email de confirmation. Notre équipe vous contactera sous 24h.';
+    banner.style.cssText='max-width:1100px;margin:0 auto 2rem;padding:1.4rem 1.6rem;background:linear-gradient(135deg,rgba(0,255,136,.14),rgba(0,212,255,.06));border:1px solid rgba(0,255,136,.45);border-radius:14px;color:var(--green);font-family:"Orbitron",sans-serif;font-size:.88rem;text-align:center;line-height:1.6;';
+    banner.innerHTML='✅ <strong>INSCRIPTION ENVOYÉE AVEC SUCCÈS !</strong><br/>'+
+      '<span style="font-size:.78rem;color:var(--text);font-family:\'Exo 2\',sans-serif;">'+
+      '📧 Email de confirmation envoyé '+(smsOk?'· 📱 SMS de confirmation envoyé':'')+'<br/>'+
+      'Notre équipe vous contactera sous 24h pour confirmer le créneau définitif.'+
+      '</span>';
     section.insertBefore(banner,section.querySelector('.inscription-wrap'));
     setTimeout(()=>{document.getElementById('inscription').scrollIntoView({behavior:'smooth'});},300);
   }
