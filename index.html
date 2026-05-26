@@ -158,6 +158,38 @@ footer a{color:var(--accent);text-decoration:none;}
 .vente-panel.active{display:block;}
 .vente-intro{max-width:900px;margin:0 auto 1.5rem;text-align:center;color:var(--muted);font-size:.88rem;line-height:1.6;}
 .vente-intro strong{color:var(--accent);}
+/* INSCRIPTION FORM */
+.inscription-wrap{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.7fr 1fr;gap:1.8rem;align-items:start;}
+@media (max-width:780px){.inscription-wrap{grid-template-columns:1fr;}}
+.inscription-form{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:2rem;position:relative;overflow:hidden;}
+.inscription-form::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--accent),var(--accent3),var(--gold));}
+.inscription-form h3{font-family:'Orbitron',sans-serif;font-size:.85rem;color:var(--accent);margin:1.4rem 0 .8rem;padding-bottom:.4rem;border-bottom:1px solid rgba(0,212,255,.15);letter-spacing:1px;}
+.inscription-form h3:first-of-type{margin-top:0;}
+.inscription-form input,.inscription-form select,.inscription-form textarea{width:100%;padding:.7rem .9rem;margin:.35rem 0;background:rgba(0,0,0,.4);border:1px solid rgba(255,255,255,.1);border-radius:8px;color:var(--text);font-family:'Exo 2',sans-serif;font-size:.85rem;transition:.3s;}
+.inscription-form input:focus,.inscription-form select:focus,.inscription-form textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(0,212,255,.1);}
+.inscription-form textarea{min-height:80px;resize:vertical;}
+.inscription-form select{cursor:pointer;}
+.inscription-form .form-note{font-size:.74rem;color:var(--muted);margin-bottom:.6rem;font-style:italic;}
+.inscription-form .slots{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:.5rem;margin-top:.5rem;}
+.inscription-form .slots label{display:flex;align-items:center;gap:.5rem;padding:.55rem .7rem;background:rgba(0,0,0,.3);border:1px solid rgba(255,255,255,.08);border-radius:7px;cursor:pointer;font-size:.78rem;color:var(--text);transition:.2s;}
+.inscription-form .slots label:hover{border-color:var(--accent);background:rgba(0,212,255,.07);}
+.inscription-form .slots input[type="checkbox"]{width:auto;margin:0;accent-color:var(--accent);}
+.inscription-form button[type="submit"]{width:100%;margin-top:1.3rem;background:linear-gradient(135deg,var(--accent),var(--accent3));color:white;border:none;padding:1rem;border-radius:10px;font-family:'Orbitron',sans-serif;font-size:.85rem;font-weight:700;letter-spacing:1.5px;cursor:pointer;transition:.3s;box-shadow:0 6px 24px rgba(0,212,255,.2);}
+.inscription-form button[type="submit"]:hover{transform:translateY(-2px);box-shadow:0 10px 32px rgba(0,212,255,.35);}
+.form-disclaimer{margin-top:.9rem;font-size:.72rem;color:var(--muted);text-align:center;line-height:1.5;}
+.inscription-side{display:flex;flex-direction:column;gap:1.2rem;}
+.qr-box,.contact-box{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.5rem;text-align:center;}
+.qr-box{background:linear-gradient(135deg,rgba(0,212,255,.04),rgba(124,58,237,.04));}
+.qr-box h4,.contact-box h4{font-family:'Orbitron',sans-serif;font-size:.85rem;color:var(--accent);margin-bottom:.9rem;letter-spacing:1px;}
+.qr-box img{width:180px;height:180px;background:white;padding:.5rem;border-radius:10px;border:2px solid rgba(0,212,255,.2);}
+.qr-box p{font-size:.72rem;color:var(--muted);margin-top:.6rem;font-style:italic;}
+.contact-box{background:linear-gradient(135deg,rgba(255,215,0,.04),rgba(255,107,53,.04));border-color:rgba(255,215,0,.2);}
+.contact-box a{display:block;padding:.6rem .8rem;margin:.4rem 0;background:rgba(0,0,0,.3);border:1px solid rgba(255,255,255,.08);border-radius:8px;color:var(--text);text-decoration:none;font-size:.78rem;font-family:'Space Mono',monospace;transition:.3s;}
+.contact-box a:hover{border-color:var(--gold);background:rgba(255,215,0,.06);color:var(--gold);}
+.contact-box .wa-btn{background:linear-gradient(135deg,#25d366,#128c7e);color:white;border-color:transparent;font-weight:700;}
+.contact-box .wa-btn:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(37,211,102,.3);color:white;}
+.cta-inscription{display:inline-flex;align-items:center;gap:.5rem;margin-top:1rem;padding:.7rem 1.4rem;background:linear-gradient(135deg,var(--accent2),var(--gold));color:#0a0e1a;font-family:'Orbitron',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:1px;border-radius:8px;text-decoration:none;transition:.3s;box-shadow:0 4px 18px rgba(255,107,53,.25);}
+.cta-inscription:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(255,107,53,.4);}
 </style>
 </head>
 <body>
@@ -187,9 +219,10 @@ footer a{color:var(--accent);text-decoration:none;}
 <nav>
   <div class="nav-inner">
     <a href="#programmes">📚 Programmes</a>
-    <a href="#formules">⭐ Formules Phares</a>
+    <a href="#formules">⭐ Formules</a>
     <a href="#personnalisees">🎓 À la Carte</a>
     <a href="#age6">🚀 6–10</a><a href="#age10">⚡ 10–15</a><a href="#age15">🧠 15+</a>
+    <a href="#inscription" style="color:var(--gold);font-weight:bold;border:1px solid rgba(255,215,0,.4);background:rgba(255,215,0,.06);">📝 S'inscrire</a>
     <a href="#vente">🛒 Vente</a>
     <a href="#competitions">🏆 Compétitions</a><a href="#equipe">👩‍🏫 Équipe</a>
   </div>
@@ -280,6 +313,10 @@ footer a{color:var(--accent);text-decoration:none;}
       Le devis inclut : frais d'inscription, déplacement, hébergement, matériel et logistique. Contactez-nous pour une estimation personnalisée.
     </div>
   </div>
+
+  <div style="text-align:center;margin-top:2rem;">
+    <a href="#inscription" class="cta-inscription">📝 S'INSCRIRE MAINTENANT →</a>
+  </div>
 </section>
 
 <!-- FORMATIONS PERSONNALISÉES — À LA CARTE -->
@@ -288,6 +325,9 @@ footer a{color:var(--accent);text-decoration:none;}
     <span class="section-label">🎓 FORMATIONS PERSONNALISÉES · SUR DEMANDE</span>
     <h2 class="section-title">📚 Modules à la Carte — Par Tranche d'Âge</h2>
     <p class="section-sub">Modules thématiques tarifés à la séance (35€/séance) — choisissez la combinaison qui vous convient selon l'âge et les objectifs. Idéal pour un parcours sur mesure.</p>
+    <div style="margin-top:1.2rem;">
+      <a href="#inscription" class="cta-inscription">📝 S'INSCRIRE À UN MODULE →</a>
+    </div>
   </div>
 </section>
 
@@ -382,6 +422,119 @@ footer a{color:var(--accent);text-decoration:none;}
     </div>
   </div>
 </div>
+
+<!-- INSCRIPTION -->
+<section id="inscription">
+  <div class="section-header">
+    <span class="section-label">📝 INSCRIPTION EN LIGNE</span>
+    <h2 class="section-title">✍️ Inscrivez Votre Enfant</h2>
+    <p class="section-sub">Séances de <strong style="color:var(--accent);">1h30</strong> programmées les après-midis libres au Luxembourg — confirmation automatique par email après inscription.</p>
+  </div>
+
+  <div class="inscription-wrap">
+
+    <!-- FORMULAIRE -->
+    <div class="inscription-form">
+      <form action="https://api.web3forms.com/submit" method="POST" id="inscription-form">
+        <!-- 🔑 IMPORTANT : Remplacer YOUR_WEB3FORMS_KEY par votre clé Web3Forms (https://web3forms.com/) -->
+        <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY">
+        <input type="hidden" name="subject" value="🆕 Nouvelle inscription — Les Petits Génies de la Robotique">
+        <input type="hidden" name="from_name" value="Site Les Petits Génies">
+        <input type="hidden" name="redirect" value="https://nassirabarhoumi.github.io/les-petits-genies-robotique/?inscription=ok#inscription">
+        <input type="checkbox" name="botcheck" style="display:none;">
+
+        <h3>👨‍👩‍👦 INFORMATIONS PARENT</h3>
+        <input type="text" name="Nom_Parent" placeholder="Nom & Prénom du parent *" required>
+        <input type="email" name="email" placeholder="Email du parent *" required>
+        <input type="hidden" name="replyto" value="">
+        <input type="tel" name="Telephone_Parent" placeholder="Téléphone (+352 / +33 / +49) *" required>
+
+        <h3>👶 INFORMATIONS ENFANT</h3>
+        <input type="text" name="Nom_Enfant" placeholder="Nom & Prénom de l'enfant *" required>
+        <div style="display:grid;grid-template-columns:1fr 1.4fr;gap:.6rem;">
+          <input type="number" name="Age_Enfant" placeholder="Âge (6-18) *" min="6" max="18" required>
+          <select name="Tranche_Age" required>
+            <option value="">Tranche d'âge *</option>
+            <option>6–10 ans (Initiation)</option>
+            <option>10–15 ans (Intermédiaire)</option>
+            <option>15–18 ans (Expert / STM32)</option>
+          </select>
+        </div>
+        <select name="Niveau_Enfant">
+          <option value="">Niveau actuel (optionnel)</option>
+          <option>Débutant — première formation</option>
+          <option>Notions de base en robotique / coding</option>
+          <option>Déjà suivi une formation robotique</option>
+          <option>Compétiteur expérimenté</option>
+        </select>
+
+        <h3>🎯 CHOIX DE FORMATION</h3>
+        <select name="Formule" required>
+          <option value="">Choisir une formule *</option>
+          <option>⭐ Formation Simple Hebdomadaire — 690€ / 22h</option>
+          <option>🏆 Formation + Compétiteur — 1290€ / 44h</option>
+          <option>🎓 Module Personnalisé À la Carte — 35€ / séance</option>
+          <option>💬 Je souhaite être conseillé(e)</option>
+        </select>
+
+        <h3>📅 CRÉNEAUX PRÉFÉRÉS · SÉANCES DE 1H30</h3>
+        <p class="form-note">Cochez tous les créneaux qui vous conviennent — les séances sont programmées les après-midis où les enfants n'ont pas école au Luxembourg.</p>
+        <div class="slots">
+          <label><input type="checkbox" name="Creneaux" value="Mardi 14:00-15:30"> 📅 Mardi 14h00 – 15h30</label>
+          <label><input type="checkbox" name="Creneaux" value="Mardi 16:00-17:30"> 📅 Mardi 16h00 – 17h30</label>
+          <label><input type="checkbox" name="Creneaux" value="Jeudi 14:00-15:30"> 📅 Jeudi 14h00 – 15h30</label>
+          <label><input type="checkbox" name="Creneaux" value="Jeudi 16:00-17:30"> 📅 Jeudi 16h00 – 17h30</label>
+          <label><input type="checkbox" name="Creneaux" value="Mercredi 14:00-15:30"> 📅 Mercredi 14h00 – 15h30</label>
+          <label><input type="checkbox" name="Creneaux" value="Mercredi 16:00-17:30"> 📅 Mercredi 16h00 – 17h30</label>
+          <label><input type="checkbox" name="Creneaux" value="Vendredi 16:00-17:30"> 📅 Vendredi 16h00 – 17h30</label>
+          <label><input type="checkbox" name="Creneaux" value="Samedi 10:00-11:30"> 📅 Samedi 10h00 – 11h30</label>
+          <label><input type="checkbox" name="Creneaux" value="Samedi 14:00-15:30"> 📅 Samedi 14h00 – 15h30</label>
+          <label><input type="checkbox" name="Creneaux" value="Samedi 16:00-17:30"> 📅 Samedi 16h00 – 17h30</label>
+        </div>
+
+        <h3>💬 MESSAGE COMPLÉMENTAIRE</h3>
+        <textarea name="Message" placeholder="Questions, demandes spécifiques, allergies, informations utiles… (optionnel)"></textarea>
+
+        <button type="submit">📨 ENVOYER L'INSCRIPTION</button>
+
+        <p class="form-disclaimer">
+          📧 <strong style="color:var(--accent);">Confirmation automatique</strong> envoyée par email au parent et à notre équipe.<br/>
+          📱 SMS / WhatsApp de confirmation envoyé sous 24h.<br/>
+          🔒 Données traitées en confidentialité — RGPD.
+        </p>
+      </form>
+    </div>
+
+    <!-- QR + CONTACT -->
+    <div class="inscription-side">
+
+      <div class="qr-box">
+        <h4>📱 SCANNEZ POUR S'INSCRIRE</h4>
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https%3A%2F%2Fnassirabarhoumi.github.io%2Fles-petits-genies-robotique%2F%23inscription&color=0a0e1a&bgcolor=ffffff&margin=10" alt="QR Code Inscription Les Petits Génies"/>
+        <p>Pointez l'appareil photo de votre téléphone vers le QR code pour ouvrir le formulaire directement.</p>
+      </div>
+
+      <div class="contact-box">
+        <h4>📞 CONTACT DIRECT</h4>
+        <a href="mailto:robotics.academy.contact@gmail.com">📧 robotics.academy.<br/>contact@gmail.com</a>
+        <a href="tel:+352000000000">📞 +352 XX XX XX XX</a>
+        <a href="https://wa.me/352000000000?text=Bonjour%2C%20je%20souhaite%20inscrire%20mon%20enfant%20%C3%A0%20la%20formation%20Les%20Petits%20G%C3%A9nies%20de%20la%20Robotique." target="_blank" rel="noopener" class="wa-btn">💬 WhatsApp Direct</a>
+      </div>
+
+      <div class="contact-box" style="background:linear-gradient(135deg,rgba(0,255,136,.06),rgba(0,212,255,.03));border-color:rgba(0,255,136,.2);">
+        <h4 style="color:var(--green);">✅ PROCESSUS</h4>
+        <div style="text-align:left;font-size:.78rem;color:var(--muted);line-height:1.8;">
+          <div>1️⃣ Vous remplissez le formulaire</div>
+          <div>2️⃣ Email automatique de confirmation</div>
+          <div>3️⃣ Notre équipe vous contacte sous 24h</div>
+          <div>4️⃣ Confirmation du créneau + paiement</div>
+          <div>5️⃣ Votre enfant démarre sa formation 🚀</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 <!-- VENTE -->
 <section id="vente">
@@ -930,7 +1083,26 @@ function showVente(id, btn){
   btn.classList.add('active');
 }
 const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)';}});},{threshold:.07});
-document.querySelectorAll('.card,.robot-card,.comp-item,.team-card,.formula-card').forEach(el=>{el.style.opacity='0';el.style.transform='translateY(20px)';el.style.transition='opacity .5s ease,transform .5s ease';obs.observe(el);});
+document.querySelectorAll('.card,.robot-card,.comp-item,.team-card,.formula-card,.inscription-form,.qr-box,.contact-box').forEach(el=>{el.style.opacity='0';el.style.transform='translateY(20px)';el.style.transition='opacity .5s ease,transform .5s ease';obs.observe(el);});
+
+// INSCRIPTION FORM — auto-fill replyto with parent email + display success banner
+const form=document.getElementById('inscription-form');
+if(form){
+  const emailInput=form.querySelector('input[name="email"]');
+  const replyto=form.querySelector('input[name="replyto"]');
+  if(emailInput&&replyto)emailInput.addEventListener('blur',()=>{replyto.value=emailInput.value;});
+}
+// Success message after redirect
+if(window.location.search.includes('inscription=ok')){
+  const section=document.getElementById('inscription');
+  if(section){
+    const banner=document.createElement('div');
+    banner.style.cssText='max-width:1100px;margin:0 auto 2rem;padding:1.2rem 1.5rem;background:linear-gradient(135deg,rgba(0,255,136,.12),rgba(0,212,255,.06));border:1px solid rgba(0,255,136,.4);border-radius:12px;color:var(--green);font-family:"Orbitron",sans-serif;font-size:.9rem;text-align:center;';
+    banner.innerHTML='✅ <strong>Inscription envoyée avec succès !</strong> Vous recevrez un email de confirmation. Notre équipe vous contactera sous 24h.';
+    section.insertBefore(banner,section.querySelector('.inscription-wrap'));
+    setTimeout(()=>{document.getElementById('inscription').scrollIntoView({behavior:'smooth'});},300);
+  }
+}
 </script>
 </body>
 </html>
