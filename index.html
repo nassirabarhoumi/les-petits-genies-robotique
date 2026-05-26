@@ -64,8 +64,12 @@ section{position:relative;padding:4.5rem 1.5rem;max-width:1100px;margin:0 auto;}
 .card-badge.gold{background:rgba(255,215,0,.1);color:var(--gold);border-color:rgba(255,215,0,.3);}
 .card-badge.green{background:rgba(0,255,136,.1);color:var(--green);border-color:rgba(0,255,136,.3);}
 .card-badge.purple{background:rgba(124,58,237,.1);color:var(--accent3);border-color:rgba(124,58,237,.3);}
-.card-sessions{margin-top:.9rem;padding:.5rem .75rem;background:rgba(0,0,0,.3);border-radius:7px;display:flex;justify-content:space-between;font-size:.7rem;font-family:'Space Mono',monospace;}
-.card-sessions .sess{color:var(--accent);}.card-sessions .lvl{color:var(--muted);}
+.card-sessions{margin-top:.9rem;padding:.55rem .75rem;background:rgba(0,0,0,.3);border-radius:7px;display:flex;flex-wrap:wrap;gap:.4rem .8rem;align-items:center;justify-content:space-between;font-size:.7rem;font-family:'Space Mono',monospace;}
+.card-sessions .sess{color:var(--accent);}
+.card-sessions .lvl{color:var(--muted);}
+.card-sessions .price{color:var(--gold);font-weight:700;letter-spacing:.5px;}
+.card-sessions .price-compet{color:#ff8c5a;font-weight:700;background:rgba(255,107,53,.12);padding:.15rem .5rem;border-radius:4px;border:1px solid rgba(255,107,53,.35);letter-spacing:.5px;}
+.card-compet-flag{position:absolute;top:.9rem;right:.9rem;font-size:.58rem;font-family:'Space Mono',monospace;letter-spacing:1px;padding:.2rem .45rem;border-radius:4px;background:linear-gradient(135deg,rgba(255,107,53,.18),rgba(255,215,0,.12));color:var(--gold);border:1px solid rgba(255,215,0,.3);}
 .card-price{margin-top:.5rem;font-family:'Orbitron',sans-serif;font-size:.8rem;color:var(--gold);font-weight:700;}
 /* ROBOT VENTE */
 .robot-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:1.4rem;max-width:1100px;margin:0 auto;}
@@ -210,28 +214,28 @@ footer a{color:var(--accent);text-decoration:none;}
     <div class="card"><span class="card-badge">Débutant</span><span class="card-icon">🚗</span>
       <div class="card-title">Alpha X — Robot Voiture</div><div class="card-sub">M5RCU · Suivi de ligne · Évitement</div>
       <ul class="card-features"><li>M5RCU + capteur ultrasonique</li><li>Module de suivi intelligent + 2 pneus + 2 moteurs</li><li>72 blocs 10mm — construction voiture</li><li>Défis : labyrinthe, évitement d'obstacles</li></ul>
-      <div class="card-sessions"><span class="sess">⏱ 12 séances</span><span class="lvl">Débutant</span></div>
+      <div class="card-sessions"><span class="sess">⏱ 12 séances</span><span class="price">💰 420€</span></div>
     </div>
     <div class="card"><span class="card-badge">Débutant</span><span class="card-icon">🤖</span>
       <div class="card-title">Beta Set — 20+ Modèles</div><div class="card-sub">C6RCU · 2 moteurs · Suivi intelligent</div>
       <ul class="card-features"><li>C6RCU programmable + 2 moteurs + module suivi</li><li>133 blocs — 20+ modèles constructibles</li><li>Initiation aux boucles et conditions</li></ul>
-      <div class="card-sessions"><span class="sess">⏱ 14 séances</span><span class="lvl">Débutant</span></div>
+      <div class="card-sessions"><span class="sess">⏱ 14 séances</span><span class="price">💰 490€</span></div>
     </div>
-    <div class="card"><span class="card-badge">Débutant</span><span class="card-icon">🐱</span>
+    <div class="card"><span class="card-badge">Débutant</span><span class="card-compet-flag">🏆 MakeX/MRC</span><span class="card-icon">🐱</span>
       <div class="card-title">mBot + Scratch / mBlock</div><div class="card-sub">Robot + Scratch = créativité sans limites</div>
       <ul class="card-features"><li>Robot mBot programmé avec Scratch</li><li>Capteurs ultrason, lumière, IR</li><li>Mode télécommande + mode autonome</li><li>Animations et sons via programmation</li></ul>
-      <div class="card-sessions"><span class="sess">⏱ 10 séances</span><span class="lvl">Débutant</span></div>
+      <div class="card-sessions"><span class="sess">⏱ 10 séances</span><span class="price">💰 350€</span><span class="price-compet">🏆 Compét. 700€</span></div>
     </div>
     <div class="card purple"><span class="card-badge purple">Initiation+</span><span class="card-icon">🔬</span>
       <div class="card-title">MicroPython — BBC micro:bit</div><div class="card-sub">Python sur microcontrôleur · Hardware coding</div>
       <ul class="card-features"><li>Syntaxe Python : listes, fonctions, modules</li><li>Programmation BBC micro:bit</li><li>Bluetooth et communication sans fil</li><li>Projets : station météo, robot autonome</li></ul>
-      <div class="card-sessions"><span class="sess">⏱ 14 séances</span><span class="lvl">Initiation avancée</span></div>
+      <div class="card-sessions"><span class="sess">⏱ 14 séances</span><span class="price">💰 490€</span></div>
     </div>
     <!-- Arduino EN DERNIER -->
     <div class="card"><span class="card-badge">Débutant</span><span class="card-icon">🧩</span>
       <div class="card-title">Arduino + Ardublock</div><div class="card-sub">Programmation visuelle glisser-déposer</div>
       <ul class="card-features"><li>Découverte carte Arduino Uno</li><li>Programmation par blocs avec Ardublock</li><li>LEDs, buzzers, capteurs simples</li><li>Projets : alarme, piano électronique</li><li>Transition vers la programmation texte</li></ul>
-      <div class="card-sessions"><span class="sess">⏱ 10 séances</span><span class="lvl">Débutant</span></div>
+      <div class="card-sessions"><span class="sess">⏱ 10 séances</span><span class="price">💰 350€</span></div>
     </div>
   </div>
 </div>
@@ -240,25 +244,25 @@ footer a{color:var(--accent);text-decoration:none;}
 <div class="age-block alt" id="age10">
   <div class="age-banner orange"><span class="age-icon">⚡</span><div class="age-info"><h2>10 – 15 ans — Programmation Avancée & IA</h2><p>Intermediate — Advanced coding & Artificial Intelligence</p></div></div>
   <div class="cards">
-    <div class="card orange"><span class="card-badge orange">Intermédiaire</span><span class="card-icon">🌩️</span>
+    <div class="card orange"><span class="card-badge orange">Intermédiaire</span><span class="card-compet-flag">🏆 MRC Global</span><span class="card-icon">🌩️</span>
       <div class="card-title">Intelligence Storm</div><div class="card-sub">Vision IA · 80 cours · 20+ modèles</div>
       <ul class="card-features"><li>E6RCU + 3 moteurs + 7 capteurs</li><li>619 blocs — 80 cours inclus</li><li>Introduction vision artificielle</li><li>Programmation structurée : fonctions, boucles</li></ul>
-      <div class="card-sessions"><span class="sess">⏱ 20 séances</span><span class="lvl">Intermédiaire</span></div>
+      <div class="card-sessions"><span class="sess">⏱ 20 séances</span><span class="price">💰 700€</span><span class="price-compet">🏆 Compét. 1400€</span></div>
     </div>
-    <div class="card orange"><span class="card-badge orange">Intermédiaire</span><span class="card-icon">🏎️</span>
+    <div class="card orange"><span class="card-badge orange">Intermédiaire</span><span class="card-compet-flag">🏆 MRC Rally</span><span class="card-icon">🏎️</span>
       <div class="card-title">RoboRun</div><div class="card-sub">Robot de course · Initiation programmation</div>
       <ul class="card-features"><li>Conçu pour l'introduction à la programmation</li><li>Construction d'une voiture robot complète</li><li>Défis de vitesse, précision et trajectoire</li><li>Programmation logique et algorithmique</li></ul>
-      <div class="card-sessions"><span class="sess">⏱ 12 séances</span><span class="lvl">Intermédiaire</span></div>
+      <div class="card-sessions"><span class="sess">⏱ 12 séances</span><span class="price">💰 420€</span><span class="price-compet">🏆 Compét. 840€</span></div>
     </div>
-    <div class="card orange"><span class="card-badge orange">Intermédiaire</span><span class="card-icon">💻</span>
+    <div class="card orange"><span class="card-badge orange">Intermédiaire</span><span class="card-compet-flag">🏆 Eurobot Jr</span><span class="card-icon">💻</span>
       <div class="card-title">Arduino — C++ Avancé</div><div class="card-sub">Du code texte aux projets embarqués réels</div>
       <ul class="card-features"><li>Variables, fonctions, conditions, boucles C++</li><li>Capteurs avancés : ultrason, température, IR</li><li>Servomoteurs, moteurs DC, LCD</li><li>Projets : bras robotique, alarme domotique</li></ul>
-      <div class="card-sessions"><span class="sess">⏱ 16 séances</span><span class="lvl">Intermédiaire</span></div>
+      <div class="card-sessions"><span class="sess">⏱ 16 séances</span><span class="price">💰 560€</span><span class="price-compet">🏆 Compét. 1120€</span></div>
     </div>
-    <div class="card orange"><span class="card-badge orange">Intermédiaire</span><span class="card-icon">🐍</span>
+    <div class="card orange"><span class="card-badge orange">Intermédiaire</span><span class="card-compet-flag">🏆 Eurobot Open</span><span class="card-icon">🐍</span>
       <div class="card-title">MicroPython — ESP32</div><div class="card-sub">Python embarqué · Wi-Fi & Bluetooth</div>
       <ul class="card-features"><li>Syntaxe MicroPython avancée : async, modules</li><li>ESP32 : Wi-Fi, BLE, capteurs I2C/SPI/UART</li><li>Projets : station météo connectée, IoT</li><li>Contrôle robot via smartphone</li></ul>
-      <div class="card-sessions"><span class="sess">⏱ 14 séances</span><span class="lvl">Intermédiaire</span></div>
+      <div class="card-sessions"><span class="sess">⏱ 14 séances</span><span class="price">💰 490€</span><span class="price-compet">🏆 Compét. 980€</span></div>
     </div>
   </div>
 </div>
@@ -267,30 +271,30 @@ footer a{color:var(--accent);text-decoration:none;}
 <div class="age-block" id="age15">
   <div class="age-banner gold"><span class="age-icon">🧠</span><div class="age-info"><h2>15 – 18 ans — Expert & Projets Professionnels (STM32, IA, IoT)</h2><p>Expert — Professional projects & industry-level skills (STM32, AI, IoT)</p></div></div>
   <div class="cards">
-    <div class="card gold"><span class="card-badge gold">Expert</span><span class="card-icon">🔧</span>
+    <div class="card gold"><span class="card-badge gold">Expert</span><span class="card-compet-flag">🏆 MRC Creative</span><span class="card-icon">🔧</span>
       <div class="card-title">Robot Maker (RoboMaker)</div><div class="card-sub">10 servomoteurs · Chorégraphie · Créativité</div>
       <ul class="card-features"><li>10 servomoteurs programmables</li><li>Programme, chante et danse</li><li>Projets créatifs autonomes avancés</li><li>Plateforme maker modulaire ouverte</li></ul>
-      <div class="card-sessions"><span class="sess">⏱ 18 séances</span><span class="lvl">Expert</span></div>
+      <div class="card-sessions"><span class="sess">⏱ 18 séances</span><span class="price">💰 630€</span><span class="price-compet">🏆 Compét. 1260€</span></div>
     </div>
     <div class="card gold"><span class="card-badge gold">Avancé</span><span class="card-icon">📡</span>
       <div class="card-title">ESP32 — Internet des Objets</div><div class="card-sub">Wi-Fi · Bluetooth · Cloud · MQTT</div>
       <ul class="card-features"><li>Architecture ESP32 dual-core, Wi-Fi, BLE</li><li>Protocoles MQTT, HTTP, WebSocket</li><li>Serveur web embarqué, contrôle smartphone</li><li>Cloud : Blynk, ThingSpeak · Maison connectée</li></ul>
-      <div class="card-sessions"><span class="sess">⏱ 18 séances</span><span class="lvl">Avancé</span></div>
+      <div class="card-sessions"><span class="sess">⏱ 18 séances</span><span class="price">💰 630€</span></div>
     </div>
-    <div class="card gold"><span class="card-badge gold">Expert</span><span class="card-icon">⚙️</span>
+    <div class="card gold"><span class="card-badge gold">Expert</span><span class="card-compet-flag">🏆 Eurobot/CdF</span><span class="card-icon">⚙️</span>
       <div class="card-title">C++ Systèmes Embarqués</div><div class="card-sub">POO · Temps réel · Optimisation</div>
       <ul class="card-features"><li>POO avancée : héritage, polymorphisme</li><li>Multitâche, interruptions, SPI/I2C/UART</li><li>Projet : bras robotique 6DOF, régulateur PID</li></ul>
-      <div class="card-sessions"><span class="sess">⏱ 20 séances</span><span class="lvl">Expert</span></div>
+      <div class="card-sessions"><span class="sess">⏱ 20 séances</span><span class="price">💰 700€</span><span class="price-compet">🏆 Compét. 1400€</span></div>
     </div>
     <div class="card gold"><span class="card-badge gold">Expert</span><span class="card-icon">🤖</span>
       <div class="card-title">IA Embarquée — TinyML</div><div class="card-sub">Vision · Machine Learning · ESP32-CAM</div>
       <ul class="card-features"><li>MicroPython avancé : async, décorateurs</li><li>ESP32-CAM : traitement d'images</li><li>TensorFlow Lite — tinyML</li><li>Projet : robot autonome vision IA</li></ul>
-      <div class="card-sessions"><span class="sess">⏱ 18 séances</span><span class="lvl">Expert</span></div>
+      <div class="card-sessions"><span class="sess">⏱ 18 séances</span><span class="price">💰 630€</span></div>
     </div>
-    <div class="card gold"><span class="card-badge gold">Pro</span><span class="card-icon">🔷</span>
+    <div class="card gold"><span class="card-badge gold">Pro</span><span class="card-compet-flag">🏆 Eurobot Pro</span><span class="card-icon">🔷</span>
       <div class="card-title">Développement STM32</div><div class="card-sub">Cartes Nucleo · Discovery · Niveau ingénieur</div>
       <ul class="card-features"><li>Architecture ARM Cortex-M · STM32CubeIDE</li><li>HAL, CubeMX, génération de code</li><li>FreeRTOS, temps réel, multitâche</li><li>Communication CAN, SPI, I2C, UART</li><li>Projet final : système embarqué pro</li></ul>
-      <div class="card-sessions"><span class="sess">⏱ 20 séances</span><span class="lvl">Pro / Ingénieur</span></div>
+      <div class="card-sessions"><span class="sess">⏱ 20 séances</span><span class="price">💰 700€</span><span class="price-compet">🏆 Compét. 1400€</span></div>
     </div>
   </div>
 </div>
